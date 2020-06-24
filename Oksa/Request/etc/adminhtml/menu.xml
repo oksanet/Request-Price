@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Oksa Request.
+ *
+ * @author    Oksana Borodina
+ * @copyright 2020 Smile
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Oksa_Request::request_price"
+             parent="Magento_Customer::customer"
+             title="Price Requests"
+             module="Oksa_Request"
+             sortOrder="60"
+             action="oksa_request/request"
+             resource="Oksa_Request::request_view" />
+    </menu>
+</config>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+  ~ Oksa Request.
+  ~
+  ~ @author    Oksana Borodina
+  ~ Copyright (c) 2020 Smile.
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Oksa\Request\Api\Data\RequestInterface" type="Oksa\Request\Model\Request" />
+    <preference for="Oksa\Request\Api\RequestRepositoryInterface" type="Oksa\Request\Model\RequestRepository" />
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="request_listing_data_source" xsi:type="string">Oksa\Request\Model\ResourceModel\Request\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="request_form_data_source" xsi:type="string">Oksa\Request\Model\ResourceModel\Request\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Oksa\Request\Model\ResourceModel\Request\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="name" xsi:type="string">request_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">request_id</argument>
+            <argument name="requestFieldName" xsi:type="string">request_id</argument>
+            <argument name="mainTable" xsi:type="string">request_price</argument>
+            <argument name="resourceModel" xsi:type="string">Oksa\Request\Model\ResourceModel\Request</argument>
+        </arguments>
+    </virtualType>
+</config>

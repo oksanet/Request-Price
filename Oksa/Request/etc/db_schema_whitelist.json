@@ -1,0 +1,17 @@
+{
+    "request_price": {
+        "column": {
+            "request_id": true,
+            "name": true,
+            "email": true,
+            "sku": true,
+            "comment": true,
+            "status": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

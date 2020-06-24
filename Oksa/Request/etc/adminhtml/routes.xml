@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Oksa Request routes.
+ *
+ * @author    Oksana Borodina
+ * @copyright 2020 Smile
+ */
+ -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="oksa_request" frontName="request_price">
+            <module name="Oksa_Request" before="Magento_Backend" />
+        </route>
+    </router>
+</config>
